@@ -384,6 +384,13 @@
                     </div>
                     <div class="modal-body">
                         <div class="form-group">
+                            <label class="form-label">Payment Method</label>
+                            <input class="lh-base form-control obj_payment_method" name="obj_payment_method" type="text"
+                                   placeholder="Enter name..."/>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
                             <label class="form-label">Ship Address</label>
                             <input class="lh-base form-control obj_name" name="obj_shipAddress" type="text"
                                    placeholder="Enter name..."/>
@@ -503,11 +510,13 @@
             var id_obj = this.getAttribute('data-id');
             //Set value Cate to edit
             $('input[name="obj_shipAddress"]').val(document.getElementById('obj_shipAddress_' + id_obj).innerHTML);
+            $('input[name="obj_payment_method"]').val(document.getElementById('obj_payment_method_' + id_obj).innerHTML);
             $('input[name="obj_shipName"]').val(document.getElementById('obj_shipName_' + id_obj).innerHTML);
             $('input[name="obj_shipNote"]').val(document.getElementById('obj_shipNote_' + id_obj).innerHTML);
             $('input[name="obj_shipPhone"]').val(document.getElementById('obj_shipPhone_' + id_obj).innerHTML);
             $('select[name="obj_status"]').val(document.getElementById('obj_status_' + id_obj).innerHTML);
             $('.update_obj').on('click', function () {
+                var obj_payment_method = $('input[name="obj_payment_method"]').val();
                 var obj_shipAddress = $('input[name="obj_shipAddress"]').val();
                 var obj_shipName = $('input[name="obj_shipName"]').val();
                 var obj_shipNote = $('input[name="obj_shipNote"]').val();
@@ -515,6 +524,7 @@
                 var obj_status = $('select[name="obj_status"]').val();
 
                 var obj = {
+                    "payment_method": obj_payment_method,
                     "shipName": obj_shipName,
                     "shipAddress": obj_shipAddress,
                     "shipPhone": obj_shipPhone,
