@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<!-- Mirrored from sb-admin-pro.startbootstrap.com/order_create.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 02 Aug 2022 12:37:38 GMT -->
+<head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Admin FastFood</title>
+        <link href="../../css/styles.css" rel="stylesheet" />
+
+        <link href="../unpkg.com/easymde%402.16.1/dist/easymde.min.css" rel="stylesheet" />
+        <link rel="icon" type="image/x-icon" href="../../assets/img/favicon.png" />
+        <script data-search-pseudo-elements="" defer="" src="../../../cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js" crossorigin="anonymous"></script>
+        <script src="../../../cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js" crossorigin="anonymous"></script>
+    </head>
+    <body class="nav-fixed">
+        <nav class="topnav navbar navbar-expand shadow justify-content-between justify-content-sm-start navbar-light bg-white" id="sidenavAccordion">
+            <button class="btn btn-icon btn-transparent-dark order-1 order-lg-0 me-2 ms-lg-2 me-lg-0" id="sidebarToggle"><i data-feather="menu"></i></button>
+            <a class="navbar-brand pe-3 ps-4 ps-lg-2" href="../index.html">Admin FastFood</a>
+            <form class="form-inline me-auto d-none d-lg-block me-3">
+                <div class="input-group input-group-joined input-group-solid">
+                    <input class="form-control pe-0" type="search" placeholder="Search" aria-label="Search" />
+                    <div class="input-group-text"><i data-feather="search"></i></div>
+                </div>
+            </form>
+            <!-- Navbar Items-->
+            <ul class="navbar-nav align-items-center ms-auto">
+                <!-- Documentation Dropdown-->
+                <li class="nav-item dropdown no-caret me-3 d-lg-none">
+                    <a class="btn btn-icon btn-transparent-dark dropdown-toggle" id="searchDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i data-feather="search"></i></a>
+                    <!-- Dropdown - Search-->
+                    <div class="dropdown-menu dropdown-menu-end p-3 shadow animated--fade-in-up" aria-labelledby="searchDropdown">
+                        <form class="form-inline me-auto w-100">
+                            <div class="input-group input-group-joined input-group-solid">
+                                <input class="form-control pe-0" type="text" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2" />
+                                <div class="input-group-text"><i data-feather="search"></i></div>
+                            </div>
+                        </form>
+                    </div>
+                </li>
+                <!-- Alerts Dropdown-->
+                <li class="nav-item dropdown no-caret d-none d-sm-block me-3 dropdown-notifications">
+                    <a class="btn btn-icon btn-transparent-dark dropdown-toggle" id="navbarDropdownAlerts" href="javascript:void(0);" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i data-feather="bell"></i></a>
+                    <div class="dropdown-menu dropdown-menu-end border-0 shadow animated--fade-in-up" aria-labelledby="navbarDropdownAlerts">
+                        <h6 class="dropdown-header dropdown-notifications-header">
+                            <i class="me-2" data-feather="bell"></i>
+                            Alerts Center
+                        </h6>
+                        <!-- Example Alert 1-->
+                        <a class="dropdown-item dropdown-notifications-item" href="#!">
+                            <div class="dropdown-notifications-item-icon bg-warning"><i data-feather="activity"></i></div>
+                            <div class="dropdown-notifications-item-content">
+                                <div class="dropdown-notifications-item-content-details">December 29, 2021</div>
+                                <div class="dropdown-notifications-item-content-text">This is an alert message. It's nothing serious, but it requires your attention.</div>
+                            </div>
+                        </a>
+                        <!-- Example Alert 2-->
+                        <a class="dropdown-item dropdown-notifications-item" href="#!">
+                            <div class="dropdown-notifications-item-icon bg-info"><i data-feather="bar-chart"></i></div>
+                            <div class="dropdown-notifications-item-content">
+                                <div class="dropdown-notifications-item-content-details">December 22, 2021</div>
+                                <div class="dropdown-notifications-item-content-text">A new monthly report is ready. Click here to view!</div>
+                            </div>
+                        </a>
+                        <!-- Example Alert 3-->
+                        <a class="dropdown-item dropdown-notifications-item" href="#!">
+                            <div class="dropdown-notifications-item-icon bg-danger"><i class="fas fa-exclamation-triangle"></i></div>
+                            <div class="dropdown-notifications-item-content">
+                                <div class="dropdown-notifications-item-content-details">December 8, 2021</div>
+                                <div class="dropdown-notifications-item-content-text">Critical system failure, systems shutting down.</div>
+                            </div>
+                        </a>
+                        <!-- Example Alert 4-->
+                        <a class="dropdown-item dropdown-notifications-item" href="#!">
+                            <div class="dropdown-notifications-item-icon bg-success"><i data-feather="user-plus"></i></div>
+                            <div class="dropdown-notifications-item-content">
+                                <div class="dropdown-notifications-item-content-details">December 2, 2021</div>
+                                <div class="dropdown-notifications-item-content-text">New user request. Woody has requested access to the organization.</div>
+                            </div>
+                        </a>
+                        <a class="dropdown-item dropdown-notifications-footer" href="#!">View All Alerts</a>
+                    </div>
+                </li>
+                <!-- Messages Dropdown-->
+                <li class="nav-item dropdown no-caret d-none d-sm-block me-3 dropdown-notifications">
+                    <a class="btn btn-icon btn-transparent-dark dropdown-toggle" id="navbarDropdownMessages" href="javascript:void(0);" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i data-feather="mail"></i></a>
+                    <div class="dropdown-menu dropdown-menu-end border-0 shadow animated--fade-in-up" aria-labelledby="navbarDropdownMessages">
+                        <h6 class="dropdown-header dropdown-notifications-header">
+                            <i class="me-2" data-feather="mail"></i>
+                            Message Center
+                        </h6>
+                        <!-- Example Message 1  -->
+                        <a class="dropdown-item dropdown-notifications-item" href="#!">
+                            <img class="dropdown-notifications-item-img" src="../../assets/img/illustrations/profiles/profile-2.png" />
+                            <div class="dropdown-notifications-item-content">
+                                <div class="dropdown-notifications-item-content-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+                                <div class="dropdown-notifications-item-content-details">Thomas Wilcox · 58m</div>
+                            </div>
+                        </a>
+                        <!-- Example Message 2-->
+                        <a class="dropdown-item dropdown-notifications-item" href="#!">
+                            <img class="dropdown-notifications-item-img" src="../../assets/img/illustrations/profiles/profile-3.png" />
+                            <div class="dropdown-notifications-item-content">
+                                <div class="dropdown-notifications-item-content-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+                                <div class="dropdown-notifications-item-content-details">Emily Fowler · 2d</div>
+                            </div>
+                        </a>
+                        <!-- Example Message 3-->
+                        <a class="dropdown-item dropdown-notifications-item" href="#!">
+                            <img class="dropdown-notifications-item-img" src="../../assets/img/illustrations/profiles/profile-4.png" />
+                            <div class="dropdown-notifications-item-content">
+                                <div class="dropdown-notifications-item-content-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+                                <div class="dropdown-notifications-item-content-details">Marshall Rosencrantz · 3d</div>
+                            </div>
+                        </a>
+                        <!-- Example Message 4-->
+                        <a class="dropdown-item dropdown-notifications-item" href="#!">
+                            <img class="dropdown-notifications-item-img" src="../../assets/img/illustrations/profiles/profile-5.png" />
+                            <div class="dropdown-notifications-item-content">
+                                <div class="dropdown-notifications-item-content-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+                                <div class="dropdown-notifications-item-content-details">Colby Newton · 3d</div>
+                            </div>
+                        </a>
+                        <!-- Footer Link-->
+                        <a class="dropdown-item dropdown-notifications-footer" href="#!">Read All Messages</a>
+                    </div>
+                </li>
+                <!-- User Dropdown-->
+                <li class="nav-item dropdown no-caret dropdown-user me-3 me-lg-4">
+                    <a class="btn btn-icon btn-transparent-dark dropdown-toggle" id="navbarDropdownUserImage" href="javascript:void(0);" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img class="img-fluid" src="../../assets/img/illustrations/profiles/profile-1.png" /></a>
+                    <div class="dropdown-menu dropdown-menu-end border-0 shadow animated--fade-in-up" aria-labelledby="navbarDropdownUserImage">
+                        <h6 class="dropdown-header d-flex align-items-center">
+                            <img class="dropdown-user-img" src="../../assets/img/illustrations/profiles/profile-1.png" />
+                            <div class="dropdown-user-details">
+                                <div class="dropdown-user-details-name">Admin</div>
+                            </div>
+                        </h6>
+                        <div class="dropdown-divider"></div>
+                        <button type="button"  class="dropdown-item log-out" >
+                            <div class="dropdown-item-icon"><i data-feather="log-out"></i></div>
+                            Logout
+                        </button>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <div id="layoutSidenav">
+            <div id="layoutSidenav_nav">
+                <nav class="sidenav shadow-right sidenav-light">
+                    <div class="sidenav-menu">
+                        <div class="nav accordion" id="accordionSidenav">
+                            <!-- Sidenav Menu Heading (Core)-->
+                            <div class="sidenav-menu-heading">Core</div>
+                            <!-- Sidenav Accordion (Dashboard)-->
+                            <a class="nav-link" href="../index.html">
+                                <div class="nav-link-icon"><i data-feather="grid"></i></div>
+                                Home
+                            </a>
+                            <!-- Sidenav Heading (Custom)-->
+                            <div class="sidenav-menu-heading">Custom</div>
+                            <!-- Sidenav Accordion (Pages)-->
+                            <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
+                                <div class="nav-link-icon"><i data-feather="grid"></i></div>
+                                Pages
+                                <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapsePages" data-bs-parent="#accordionSidenav">
+                                <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavPagesMenu">
+                                    <!-- Nested Sidenav Accordion (Pages -> Account)-->
+                                    <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAccount" aria-expanded="false" aria-controls="pagesCollapseAccount">
+                                        Category
+                                        <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                    </a>
+                                    <div class="collapse" id="pagesCollapseAccount" data-bs-parent="#accordionSidenavPagesMenu">
+                                        <nav class="sidenav-menu-nested nav">
+                                            <a class="nav-link" href="../category/category_list.html">Category List</a>
+                                            <a class="nav-link" href="../category/category_create.html">Category Create</a>
+                                        </nav>
+                                    </div>
+<!--                                     ===================================================================================-->
+                                    <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAuthBasic" aria-expanded="false" aria-controls="pagesCollapseAuthBasic">
+                                        Product
+                                        <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                    </a>
+                                    <div class="collapse" id="pagesCollapseAuthBasic" data-bs-parent="#accordionSidenavPagesMenu">
+                                        <nav class="sidenav-menu-nested nav">
+                                            <a class="nav-link" href="../product/product_list.html">Product List</a>
+                                            <a class="nav-link" href="../product/product_create.html">Product Create</a>
+                                        </nav>
+                                    </div>
+
+                                    <!-- =================================================================================== -->
+                                    <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAuthSocial" aria-expanded="false" aria-controls="pagesCollapseAuthSocial">
+                                        Customer
+                                        <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                    </a>
+                                    <div class="collapse" id="pagesCollapseAuthSocial" data-bs-parent="#accordionSidenavPagesMenu">
+                                        <nav class="sidenav-menu-nested nav">
+                                            <a class="nav-link" href="../customer/customer_list.html">Customer List</a>
+                                        </nav>
+                                    </div>
+                                    <!-- =================================================================================== -->
+                                    <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#pagesOrder" aria-expanded="false" aria-controls="pagesOrder">
+                                        Order
+                                        <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                    </a>
+                                    <div class="collapse" id="pagesOrder" data-bs-parent="#accordionSidenavPagesMenu">
+                                        <nav class="sidenav-menu-nested nav">
+                                            <a class="nav-link" href="../order/order_list.html">Order List</a>
+                                        </nav>
+                                    </div>
+                                    <!-- =================================================================================== -->
+                                    <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#pagesComment" aria-expanded="false" aria-controls="pagesComment">
+                                        Comment
+                                        <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                    </a>
+                                    <div class="collapse" id="pagesComment" data-bs-parent="#accordionSidenavPagesMenu">
+                                        <nav class="sidenav-menu-nested nav">
+                                            <a class="nav-link" href="../comment/comment_list.html">Comment List</a>
+                                            <a class="nav-link" href="../comment/reply_list.html">Reply List</a>
+
+                                        </nav>
+                                    </div>
+                              <!-- =================================================================================== -->
+                                    <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#pagesSlide" aria-expanded="false" aria-controls="pagesSlide">
+                                        Slide
+                                        <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                    </a>
+                                    <div class="collapse" id="pagesSlide" data-bs-parent="#accordionSidenavPagesMenu">
+                                        <nav class="sidenav-menu-nested nav">
+                                            <a class="nav-link" href="slide_list.html">Slide List</a>
+                                            <a class="nav-link" href="slide_create.html">Slide Create</a>
+                                        </nav>
+                                    </div>
+                                    <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#pagesRating" aria-expanded="false" aria-controls="pagesRating">
+                                        Rating
+                                        <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                    </a>
+                                    <div class="collapse" id="pagesRating" data-bs-parent="#accordionSidenavPagesMenu">
+                                        <nav class="sidenav-menu-nested nav">
+                                            <a class="nav-link" href="../rating/rating_list.html">Rating List</a>
+                                        </nav>
+                                    </div>
+
+
+                                </nav>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- Sidenav Footer-->
+                    <div class="sidenav-footer">
+                        <div class="sidenav-footer-content">
+                            <div class="sidenav-footer-subtitle">Logged in as:</div>
+                            <div class="sidenav-footer-title">Admin</div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <div id="layoutSidenav_content">
+                <main>
+                    <header class="page-header page-header-compact page-header-light border-bottom bg-white mb-4">
+                        <div class="container-fluid px-4">
+                            <div class="page-header-content">
+                                <div class="row align-items-center justify-content-between pt-3">
+                                    <div class="col-auto mb-3">
+                                        <h1 class="page-header-title">
+                                            <div class="page-header-icon"><i data-feather="file-text"></i></div>
+                                            Create Slide
+                                        </h1>
+                                    </div>
+                                    <div class="col-12 col-xl-auto mb-3">
+                                        <a class="btn btn-sm btn-light text-primary" href="slide_list.html">
+                                            <i class="me-1" data-feather="arrow-left"></i>
+                                            Back to All Posts
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </header>
+                    <!-- Main page content-->
+                    <div class="container-fluid px-4">
+                        <form action="" name="category_create" >
+                            <div class="row gx-4">
+                                <div class="col-lg-4">
+                                    <div class="card card-header-actions mb-4">
+                                        <div class="card-header">
+                                            Thumbnail
+                                            <i class="text-muted" data-feather="info" data-bs-toggle="tooltip" data-bs-placement="left" title="The post preview text shows below the post title, and is the post summary on blog pages."></i>
+                                        </div>
+                                        <div class="card-body text-center">
+                                            <!-- Profile picture image-->
+                                            <img class="img-account-profile rounded-circle mb-2" id="image-preview"  src="">
+                                            <!-- Profile picture help block-->
+                                            <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div>
+                                            <input class="lh-base form-control  mb-4" name="thumbnail" type="text" placeholder="Enter thumbnail..." />
+                                            <!-- Profile picture upload button-->
+                                            <button id="upload_widget" class="btn btn-primary" type="button">Upload new image</button>
+                                        </div>
+                                    </div>
+                                    <div class="card card-header-actions">
+                                        <div class="card-header">
+                                            Publish
+                                            <i class="text-muted" data-feather="info" data-bs-toggle="tooltip" data-bs-placement="left" title="Your updates will be live once a moderator approves the changes."></i>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="d-grid">
+                                                <button class="fw-500 btn btn-primary category_create">Submit Create</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-8">
+                                    <div class="card card-header-actions mb-4">
+                                        <div class="card-header">
+                                            Note
+                                            <i class="text-muted" data-feather="info" data-bs-toggle="tooltip" data-bs-placement="left" title="The post preview text shows below the post title, and is the post summary on blog pages."></i>
+                                        </div>
+                                        <div class="card-body">
+                                            <input class="lh-base form-control" name="name" type="text" placeholder="Enter note..."/>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </form>
+                    </div>
+                </main>
+                <footer class="footer-admin mt-auto footer-light">
+                    <div class="container-xl px-4">
+                        <div class="row">
+                            <div class="col-md-6 small">Copyright © Your Website 2021</div>
+                            <div class="col-md-6 text-md-end small">
+                                <a href="#!">Privacy Policy</a>
+                                ·
+                                <a href="#!">Terms &amp; Conditions</a>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+        <script type="text/javascript">
+            $(document).ready(function(){
+                var token = localStorage.getItem('token');
+                if (token == null || token == undefined){
+                    window.location.href = '../error/error-403.html';
+                }
+              $(".category_create").on('click', function(){
+
+                  var note = $("input[name='name']").val();
+                  var thumbnail = $("input[name='thumbnail']").val();
+                  var obj = {
+                      "note": note,
+                      "thumbnail": thumbnail
+                  };
+                  var xhttp = new XMLHttpRequest();
+                  xhttp.onreadystatechange = function() {
+                      if (xhr.readyState === 1) {
+                          window.location.href = '../category/category_list.html';
+                      }
+                  };
+                  xhttp.open("POST", "https://api-exam4.herokuapp.com/api/v1/slides", false);
+                  xhttp.setRequestHeader("Content-type", "application/json");
+                  xhttp.setRequestHeader("Authorization", "Bearer " + token);
+                  xhttp.send(JSON.stringify(obj));
+              });
+            });
+        </script>
+
+        <script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            var myWidget = cloudinary.createUploadWidget({
+                    cloudName: 'huytqth2008010',
+                    uploadPreset: 'clkppahe'}, (error, result) => {
+                    if (!error && result && result.event === "success") {
+                        console.log('Done! Here is the image info: ', result.info.url);
+                        var img = document.getElementById("image-preview");
+                        img.classList.remove("hide");
+                        img.src = result.info.url;
+                        document.forms['category_create']['thumbnail'].value = result.info.url;
+                    }
+                }
+            )
+            document.getElementById("upload_widget").addEventListener("click", function(){
+                myWidget.open();
+            }, false);
+        </script>
+
+        <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="../../../cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="../../js/scripts.js"></script>
+        <script src="../unpkg.com/easymde%402.16.1/dist/easymde.min.js" crossorigin="anonymous"></script>
+        <script src="../../js/markdown.js"></script>
+        <script src="../../../assets.startbootstrap.com/js/sb-customizer.js"></script>
+</body>
+
+<!-- Mirrored from sb-admin-pro.startbootstrap.com/order_create.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 02 Aug 2022 12:37:38 GMT -->
+</html>
