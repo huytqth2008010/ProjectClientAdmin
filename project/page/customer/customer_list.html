@@ -147,124 +147,98 @@
                 <nav class="sidenav shadow-right sidenav-light">
                     <div class="sidenav-menu">
                         <div class="nav accordion" id="accordionSidenav">
-                            <div class="sidenav-menu-heading d-sm-none">Account</div>
-                            <a class="nav-link d-sm-none" href="#!">
-                                <div class="nav-link-icon"><i data-feather="bell"></i></div>
-                                Alerts
-                                <span class="badge bg-warning-soft text-warning ms-auto">4 New!</span>
-                            </a>
-                            <a class="nav-link d-sm-none" href="#!">
-                                <div class="nav-link-icon"><i data-feather="mail"></i></div>
-                                Messages
-                                <span class="badge bg-success-soft text-success ms-auto">2 New!</span>
-                            </a>
                             <!-- Sidenav Menu Heading (Core)-->
                             <div class="sidenav-menu-heading">Core</div>
                             <!-- Sidenav Accordion (Dashboard)-->
                             <a class="nav-link" href="../index.html">
-                                <div class="nav-link-icon"><i data-feather="grid"></i></div>
+                                <div class="nav-link-icon"><i data-feather="home"></i></div>
                                 Home
                             </a>
                             <!-- Sidenav Heading (Custom)-->
                             <div class="sidenav-menu-heading">Custom</div>
-                            <!-- Sidenav Accordion (Pages)-->
-                            <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
-                                <div class="nav-link-icon"><i data-feather="grid"></i></div>
-                                Pages
+
+                            <!-- Sidenav Accordion (Applications)-->
+                            <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseCategory" aria-expanded="false" aria-controls="collapseCategory">
+                                <div class="nav-link-icon"><i data-feather="command"></i></div>
+                                Category
                                 <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
-                            <div class="collapse" id="collapsePages" data-bs-parent="#accordionSidenav">
-                                <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavPagesMenu">
-                                    <!-- Nested Sidenav Accordion (Pages -> Account)-->
-                                    <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAccount" aria-expanded="false" aria-controls="pagesCollapseAccount">
-                                        Category
-                                        <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                                    </a>
-                                    <div class="collapse" id="pagesCollapseAccount" data-bs-parent="#accordionSidenavPagesMenu">
-                                        <nav class="sidenav-menu-nested nav">
-                                            <a class="nav-link" href="../category/category_list.html">Category List</a>
-                                            <a class="nav-link" href="../category/category_create.html">Category Create</a>
-                                        </nav>
-                                    </div>
-
-<!--                                     ===================================================================================-->
-                                    <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#pagesProduct" aria-expanded="false" aria-controls="pagesProduct">
-                                        Product
-                                        <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                                    </a>
-                                    <div class="collapse" id="pagesProduct" data-bs-parent="#accordionSidenavPagesMenu">
-                                        <nav class="sidenav-menu-nested nav">
-                                            <a class="nav-link" href="../product/product_list.html">Product List</a>
-                                            <a class="nav-link" href="../product/product_create.html">Product Create</a>
-                                        </nav>
-                                    </div>
-
-                                    <!-- =================================================================================== -->
-                                    <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#pagesCustomer" aria-expanded="false" aria-controls="pagesCustomer">
-                                        Customer
-                                        <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                                    </a>
-                                    <div class="collapse" id="pagesCustomer" data-bs-parent="#accordionSidenavPagesMenu">
-                                        <nav class="sidenav-menu-nested nav">
-                                            <a class="nav-link" href="customer_list.html">Customer List</a>
-                                        </nav>
-                                    </div>
-                                    <!-- =================================================================================== -->
-                                    <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#pagesOrder" aria-expanded="false" aria-controls="pagesOrder">
-                                        Order
-                                        <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                                    </a>
-                                    <div class="collapse" id="pagesOrder" data-bs-parent="#accordionSidenavPagesMenu">
-                                        <nav class="sidenav-menu-nested nav">
-                                            <a class="nav-link" href="../order/order_list.html">Order List</a>
-                                        </nav>
-                                    </div>
-                                    <!-- =================================================================================== -->
-                                    <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#pagesComment" aria-expanded="false" aria-controls="pagesComment">
-                                        Comment
-                                        <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                                    </a>
-                                    <div class="collapse" id="pagesComment" data-bs-parent="#accordionSidenavPagesMenu">
-                                        <nav class="sidenav-menu-nested nav">
-                                            <a class="nav-link" href="../comment/comment_list.html">Comment List</a>
-                                            <a class="nav-link" href="../comment/reply_list.html">Reply List</a>
-                                        </nav>
-                                    </div>
-                                    <!-- =================================================================================== -->
-                                    <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#pagesShoppingCart" aria-expanded="false" aria-controls="pagesShoppingCart">
-                                        ShoppingCart
-                                        <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                                    </a>
-                                    <div class="collapse" id="pagesShoppingCart" data-bs-parent="#accordionSidenavPagesMenu">
-                                        <nav class="sidenav-menu-nested nav">
-                                            <a class="nav-link" href="../shopping_cart/shopping_cart_list.html">ShoppingCart List</a>
-                                            <a class="nav-link" href="../shopping_cart/shopping_cart_create.html">ShoppingCart Create</a>
-                                        </nav>
-                                    </div>   <!-- =================================================================================== -->
-                                    <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#pagesSlide" aria-expanded="false" aria-controls="pagesSlide">
-                                        Slide
-                                        <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                                    </a>
-                                    <div class="collapse" id="pagesSlide" data-bs-parent="#accordionSidenavPagesMenu">
-                                        <nav class="sidenav-menu-nested nav">
-                                            <a class="nav-link" href="../slide/slide_list.html">Slide List</a>
-                                            <a class="nav-link" href="../slide/slide_create.html">Slide Create</a>
-                                        </nav>
-                                    </div>
-                                    <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#pagesRating" aria-expanded="false" aria-controls="pagesRating">
-                                        Rating
-                                        <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                                    </a>
-                                    <div class="collapse" id="pagesRating" data-bs-parent="#accordionSidenavPagesMenu">
-                                        <nav class="sidenav-menu-nested nav">
-                                            <a class="nav-link" href="../rating/rating_list.html">Rating List</a>
-                                        </nav>
-                                    </div>
-
+                            <div class="collapse" id="collapseCategory" data-bs-parent="#accordionSidenav">
+                                <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavCategoryMenu">
+                                    <a class="nav-link" href="../category/category_list.html">Category List</a>
+                                    <a class="nav-link" href="../category/category_create.html">Category Create</a>
                                 </nav>
-
                             </div>
+                            <!-- =================================================================================== -->
 
+                            <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseProduct" aria-expanded="false" aria-controls="collapseProduct">
+                                <div class="nav-link-icon"><i data-feather="grid"></i></div>
+                                Product
+                                <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseProduct" data-bs-parent="#accordionSidenav">
+                                <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavProductsMenu">
+                                    <a class="nav-link" href="../product/product_list.html">Product List</a>
+                                    <a class="nav-link" href="../product/product_create.html">Product Create</a>
+                                </nav>
+                            </div>
+                            <!-- =================================================================================== -->
+                            <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseCustomer" aria-expanded="false" aria-controls="collapseCustomer">
+                                <div class="nav-link-icon"><i data-feather="command"></i></div>
+                                Customer
+                                <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseCustomer" data-bs-parent="#accordionSidenav">
+                                <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavCustomersMenu">
+                                    <a class="nav-link" href="customer_list.html">Customer List</a>
+                                </nav>
+                            </div>
+                            <!-- =================================================================================== -->
+                            <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseOrder" aria-expanded="false" aria-controls="collapseOrder">
+                                <div class="nav-link-icon"><i data-feather="grid"></i></div>
+                                Order
+                                <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseOrder" data-bs-parent="#accordionSidenav">
+                                <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavOrdersMenu">
+                                    <a class="nav-link" href="../order/order_list.html">Order List</a>
+                                </nav>
+                            </div>
+                            <!-- =================================================================================== -->
+                            <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseComment" aria-expanded="false" aria-controls="collapseComment">
+                                <div class="nav-link-icon"><i data-feather="command"></i></div>
+                                Comment
+                                <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseComment" data-bs-parent="#accordionSidenav">
+                                <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavCommentsMenu">
+                                    <a class="nav-link" href="../comment/comment_list.html">Comment List</a>
+                                    <a class="nav-link" href="../comment/reply_list.html">Reply List</a>
+                                </nav>
+                            </div>
+                            <!-- =================================================================================== -->
+                            <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseSlide" aria-expanded="false" aria-controls="collapseSlide">
+                                <div class="nav-link-icon"><i data-feather="grid"></i></div>
+                                Slide
+                                <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseSlide" data-bs-parent="#accordionSidenav">
+                                <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavSlidesMenu">
+                                    <a class="nav-link" href="../slide/slide_list.html">Slide List</a>
+                                    <a class="nav-link" href="../slide/slide_create.html">Slide Create</a>
+                                </nav>
+                            </div>
+                            <!-- =================================================================================== -->
+                            <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseRating" aria-expanded="false" aria-controls="collapseRating">
+                                <div class="nav-link-icon"><i data-feather="command"></i></div>
+                                Rating
+                                <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseRating" data-bs-parent="#accordionSidenav">
+                                <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavRatingsMenu">
+                                    <a class="nav-link" href="../rating/rating_list.html">Rating List</a>
+                                </nav>
+                            </div>
                         </div>
                     </div>
                     <!-- Sidenav Footer-->
@@ -448,7 +422,7 @@
                 Swal.fire({
                   position: 'top-end',
                   icon: 'success',
-                  title: 'Update category success!',
+                  title: 'Update customer success!',
                   showConfirmButton: false,
                   timer: 1500
                 });

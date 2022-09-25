@@ -96,7 +96,7 @@
                 if (xhr.readyState === 4 && xhr.status === 200){
                     var jsonObject = JSON.parse(xhr.responseText);
                     localStorage.setItem('token', jsonObject.accessToken);
-                    window.location.href = '../category/category_list.html';
+                    window.location.href = '../index.html';
                 }
             };
             xhr.open('POST', registerApiUrl, false);
