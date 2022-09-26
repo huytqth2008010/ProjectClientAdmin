@@ -297,7 +297,7 @@
                             <div class="card-body">
                                 <div class="d-flex align-items-center">
                                     <div class="flex-grow-1">
-                                        <div class="small fw-bold text-primary mb-1">Total Products</div>
+                                        <div class="small fw-bold text-primary mb-1"><a href="../page/product/product_list.html">Total Products</a></div>
                                         <div class="h5 " id="total_products"></div>
                                     </div>
                                     <div class="ms-2"><i class="fas fa-tag fa-2x text-gray-200"></i></div>
@@ -311,7 +311,7 @@
                             <div class="card-body">
                                 <div class="d-flex align-items-center">
                                     <div class="flex-grow-1">
-                                        <div class="small fw-bold text-secondary mb-1">Total Orders</div>
+                                        <div class="small fw-bold text-secondary mb-1"><a href="../page/order/order_list.html">Total Orders</a></div>
                                         <div class="h5" id="total_orders"></div>
                                     </div>
                                     <div class="ms-2"><i class="fas fa-tag fa-2x text-gray-200"></i></div>
@@ -322,7 +322,7 @@
 
                     <div class="col-xl-3 col-md-6 mb-4">
                         <!-- Dashboard info widget 4-->
-                        <div class="card border-start-lg border-start-info h-100">
+                        <div class="card border-start-lg border-start-success h-100">
                             <div class="card-body">
                                 <div class="d-flex align-items-center">
                                     <div class="flex-grow-1">
@@ -350,7 +350,7 @@
                     </div>
                     <div class="col-xl-3 col-md-6 mb-4">
                         <!-- Dashboard info widget 4-->
-                        <div class="card border-start-lg border-start-info h-100">
+                        <div class="card border-start-lg border-start-primary h-100">
                             <div class="card-body">
                                 <div class="d-flex align-items-center">
                                     <div class="flex-grow-1">
@@ -364,7 +364,7 @@
                     </div>
                     <div class="col-xl-3 col-md-6 mb-4">
                         <!-- Dashboard info widget 4-->
-                        <div class="card border-start-lg border-start-info h-100">
+                        <div class="card border-start-lg border-start-secondary h-100">
                             <div class="card-body">
                                 <div class="d-flex align-items-center">
                                     <div class="flex-grow-1">
@@ -378,7 +378,7 @@
                     </div>
                     <div class="col-xl-3 col-md-6 mb-4">
                         <!-- Dashboard info widget 4-->
-                        <div class="card border-start-lg border-start-info h-100">
+                        <div class="card border-start-lg border-start-success h-100">
                             <div class="card-body">
                                 <div class="d-flex align-items-center">
                                     <div class="flex-grow-1">
@@ -407,7 +407,7 @@
                     </div>
                     <div class="col-xl-3 col-md-6 mb-4">
                         <!-- Dashboard info widget 4-->
-                        <div class="card border-start-lg border-start-info h-100">
+                        <div class="card border-start-lg border-start-primary h-100">
                             <div class="card-body">
                                 <div class="d-flex align-items-center">
                                     <div class="flex-grow-1">
@@ -422,11 +422,11 @@
                     </div>
                     <div class="col-xl-3 col-md-6 mb-4">
                         <!-- Dashboard info widget 3-->
-                        <div class="card border-start-lg border-start-success h-100">
+                        <div class="card border-start-lg border-start-secondary h-100">
                             <div class="card-body">
                                 <div class="d-flex align-items-center">
                                     <div class="flex-grow-1">
-                                        <div class="small fw-bold text-success mb-1">Total Comments</div>
+                                        <div class="small fw-bold text-success mb-1"><a href="../page/comment/comment_list.html">Total Comments</a></div>
                                         <div class="h5" id="total_comments"></div>
                                     </div>
                                     <div class="ms-2"><i class="fas fa-mouse-pointer fa-2x text-gray-200"></i></div>
@@ -442,11 +442,24 @@
                         <div class="card mb-4">
                             <div class="card-header">Revenue Summary</div>
                             <div class="chart-area">
-                                <div id="myAreaChart"></div>
+                                <div id="orderChart"></div>
                             </div>
                         </div>
                     </div>
+
                 </div>
+
+            </div>
+            <div class="container-xl px-4 mt-5 mb-15">
+                <div class="col-lg-12 mb-4">
+                        <!-- Area chart example-->
+                        <div class="card mb-4">
+                            <div class="card-header">Revenue chart</div>
+                            <div class="chart-area">
+                                <div id="moneyChart"></div>
+                            </div>
+                        </div>
+                    </div>
             </div>
         </main>
     </div>
@@ -454,24 +467,18 @@
 
 <script type="text/javascript">
     document.addEventListener('DOMContentLoaded', function () {
-        var token = localStorage.getItem('token');
-        if (token == null || token == undefined) {
-            window.location.href = '../page/error/error-403.html';
-        } else {
-            var apiUrl = 'https://api-exam4.herokuapp.com/api/v1/products';
-            var xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function () {
-                if (this.readyState == 4) {
-                    var jsonObject = JSON.parse(xhttp.responseText);
-                    var listTotalProduct = document.getElementById("total_products");
-                    var content = `<span>${jsonObject.length}</span>`;
-                    listTotalProduct.innerHTML = content;
-                }
-            };
-        }
+        var apiUrl = 'https://api-exam4.herokuapp.com/api/v1/products';
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4) {
+                var jsonObject = JSON.parse(xhttp.responseText);
+                var listTotalProduct = document.getElementById("total_products");
+                var content = `<span>${jsonObject.length}</span>`;
+                listTotalProduct.innerHTML = content;
+            }
+        };
         xhttp.open("GET", apiUrl, false);
         xhttp.setRequestHeader("Content-type", "application/json");
-        xhttp.setRequestHeader("Authorization", "Bearer " + token);
         xhttp.send();
     });
     document.addEventListener('DOMContentLoaded', function () {
@@ -517,33 +524,49 @@
                 var idTotalCanceled = document.getElementById("total_canceled_order");
                 var data = [[],[],[],[],[],[],[],[],[],[],[],[]];
                 var data1 = [[],[],[],[],[],[],[],[],[],[],[],[]];
+                var data2 = [[],[],[],[],[],[],[],[],[],[],[],[]];
+                var data3 = [[],[],[],[],[],[],[],[],[],[],[],[]];
                 for (let i = 0; i < jsonObject.length; i++) {
-                    totalOrderReceived += 1;
                     if (jsonObject[i].status == "RECEIVED"){
+                        totalOrderReceived += 1;
+                        totalRevenue += jsonObject[i].totalPrice;
                         if (jsonObject[i].updatedAt[5] + jsonObject[i].updatedAt[6] == "01"){
                             data[0] = totalOrderReceived;
+                            data2[0] = totalRevenue;
                         }else if (jsonObject[i].updatedAt[5] + jsonObject[i].updatedAt[6] == '02'){
                             data[1] = totalOrderReceived;
+                            data2[1] = totalRevenue;
                         }else if (jsonObject[i].updatedAt[5] + jsonObject[i].updatedAt[6] == '03'){
                             data[2] = totalOrderReceived;
+                            data2[2] = totalRevenue;
                         }else if (jsonObject[i].updatedAt[5] + jsonObject[i].updatedAt[6] == '04'){
                             data[3] = totalOrderReceived;
+                            data2[3] = totalRevenue;
                         }else if (jsonObject[i].updatedAt[5] + jsonObject[i].updatedAt[6] == '05'){
                             data[4] = totalOrderReceived;
+                            data2[4] = totalRevenue;
                         }else if (jsonObject[i].updatedAt[5] + jsonObject[i].updatedAt[6] == '06'){
                             data[5] = totalOrderReceived;
+                            data2[5] = totalRevenue;
                         }else if (jsonObject[i].updatedAt[5] + jsonObject[i].updatedAt[6] == '07'){
                             data[6] = totalOrderReceived;
+                            data2[6] = totalRevenue;
                         }else if (jsonObject[i].updatedAt[5] + jsonObject[i].updatedAt[6] == '08'){
                             data[7] = totalOrderReceived;
+                            data2[7] = totalRevenue;
                         }else if (jsonObject[i].updatedAt[5] + jsonObject[i].updatedAt[6] == '09'){
                             data[8] = totalOrderReceived;
+                            data2[8] = totalRevenue;
+                            console.log(data2)
                         }else if (jsonObject[i].updatedAt[5] + jsonObject[i].updatedAt[6] == '10'){
-                            data[10] = totalOrderReceived;
+                            data[9] = totalOrderReceived;
+                            data2[9] = totalRevenue;
                         }else if (jsonObject[i].updatedAt[5] + jsonObject[i].updatedAt[6] == '11'){
-                            data[11] = totalOrderReceived;
+                            data[10] = totalOrderReceived;
+                            data2[10] = totalRevenue;
                         }else if (jsonObject[i].updatedAt[5] + jsonObject[i].updatedAt[6] == '12'){
-                            data[12] = totalOrderReceived;
+                            data[11] = totalOrderReceived;
+                            data2[11] = totalRevenue;
                         }
                         for (let j = 0; j < jsonObject[i].orderDetails.length; j++) {
                             var token = localStorage.getItem('token');
@@ -555,6 +578,31 @@
                                     var obj = JSON.parse(xhttp1.responseText);
                                     var costPrice = obj.cost_price;
                                     totalCost += costPrice;
+                                    if (jsonObject[i].updatedAt[5] + jsonObject[i].updatedAt[6] == "01"){
+                                        data3[0] = totalCost;
+                                    }else if (jsonObject[i].updatedAt[5] + jsonObject[i].updatedAt[6] == '02'){
+                                        data3[1] = totalCost;
+                                    }else if (jsonObject[i].updatedAt[5] + jsonObject[i].updatedAt[6] == '03'){
+                                        data3[2] = totalCost;
+                                    }else if (jsonObject[i].updatedAt[5] + jsonObject[i].updatedAt[6] == '04'){
+                                        data3[3] = totalCost;
+                                    }else if (jsonObject[i].updatedAt[5] + jsonObject[i].updatedAt[6] == '05'){
+                                        data3[4] = totalCost;
+                                    }else if (jsonObject[i].updatedAt[5] + jsonObject[i].updatedAt[6] == '06'){
+                                        data3[5] = totalCost;
+                                    }else if (jsonObject[i].updatedAt[5] + jsonObject[i].updatedAt[6] == '07'){
+                                        data3[6] = totalCost;
+                                    }else if (jsonObject[i].updatedAt[5] + jsonObject[i].updatedAt[6] == '08'){
+                                        data3[7] = totalCost;
+                                    }else if (jsonObject[i].updatedAt[5] + jsonObject[i].updatedAt[6] == '09'){
+                                        data3[8] = totalCost;
+                                    }else if (jsonObject[i].updatedAt[5] + jsonObject[i].updatedAt[6] == '10'){
+                                        data3[9] = totalCost;
+                                    }else if (jsonObject[i].updatedAt[5] + jsonObject[i].updatedAt[6] == '11'){
+                                        data3[10] = totalCost;
+                                    }else if (jsonObject[i].updatedAt[5] + jsonObject[i].updatedAt[6] == '12'){
+                                        data3[11] = totalCost;
+                                    }
                                 }
                             }
                             xhttp1.open("GET", urlOrderDetail, false);
@@ -562,7 +610,6 @@
                             xhttp1.setRequestHeader("Authorization", "Bearer " + token);
                             xhttp1.send();
                         }
-                        totalRevenue += jsonObject[i].totalPrice;
                     }else if (jsonObject[i].status == "WAITING"){
                         totalOrderWaiting += 1;
                     }else if (jsonObject[i].status == "CONFIRMED"){
@@ -598,8 +645,6 @@
                         }
                     }
                 }
-                console.log(data)
-
                 var totalProfit = totalRevenue - totalCost;
                 idTotalRevenue.innerHTML = new Intl.NumberFormat().format(totalRevenue) + " VND";
                 idTotalProfit.innerHTML = new Intl.NumberFormat().format(totalProfit) + " VND";
@@ -609,7 +654,7 @@
                 idTotalDelivering.innerHTML = new Intl.NumberFormat().format(totalOrderDelivering);
                 idTotalCanceled.innerHTML = new Intl.NumberFormat().format(totalOrderCanceled);
 
-                Highcharts.chart('myAreaChart', {
+                Highcharts.chart('orderChart', {
                     chart: {
                         type: 'column'
                     },
@@ -667,6 +712,56 @@
                     },{
                         name: 'Order canceled',
                         data: data1,
+                    }]
+                });
+                Highcharts.chart('moneyChart', {
+                    chart: {
+                        type: 'line'
+                    },
+                    title: {
+                        style: {
+                            fontWeight: 'bold'
+                        },
+                        text: 'Profit chart'
+                    },
+                    subtitle: {
+                        text: 'Profit statistics chart'
+                    },
+                    xAxis: {
+                        tickWidth: 1,
+                        tickLength: 5,
+                        title: {
+                            text: 'Month',
+                            style: {
+                                fontsize: '20px',
+                                fontWeight: 'bold',
+                            },
+                        },
+                        categories: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'],
+                    },
+                    yAxis: {
+                        gridLineWidth: 1,
+                        tickWidth: 1,
+                        tickLength: 5,
+                        lineWidth: 1,
+                        title: {
+                            text: 'Money (VND)'
+                        }
+                    },
+                    plotOptions: {
+                        line: {
+                            dataLabels: {
+                                enabled: true
+                            },
+                            enableMouseTracking: false
+                        }
+                    },
+                    series: [{
+                        name: 'Total Revenue',
+                        data: data2,
+                    },{
+                        name: 'Total profit',
+                        data: data3,
                     }]
                 });
             }
