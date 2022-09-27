@@ -474,11 +474,11 @@
                     cloudName: 'huytqth2008010',
                     uploadPreset: 'clkppahe'}, (error, result) => {
                     if (!error && result && result.event === "success") {
-                        console.log('Done! Here is the image info: ', result.info.thumbnail_url);
+                        console.log('Done! Here is the image info: ', result.info.secure_url);
                         var img = document.getElementById("obj_thumbnail");
                         img.classList.remove("hide");
-                        img.src = result.info.thumbnail_url;
-                        document.forms['obj_create']['obj_thumbnail'].value = result.info.thumbnail_url;
+                        img.src = result.info.secure_url;
+                        document.forms['obj_create']['obj_thumbnail'].value = result.info.secure_url;
                         console.log(result);
                     }
                 }

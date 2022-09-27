@@ -377,11 +377,11 @@
                     cloudName: 'huytqth2008010',
                     uploadPreset: 'clkppahe'}, (error, result) => {
                     if (!error && result && result.event === "success") {
-                        console.log('Done! Here is the image info: ', result.info.url);
+                        console.log('Done! Here is the image info: ', result.info.thumbnail_url);
                         var img = document.getElementById("image-preview");
                         img.classList.remove("hide");
-                        img.src = result.info.url;
-                        document.forms['category_create']['thumbnail'].value = result.info.url;
+                        img.src = result.info.thumbnail_url;
+                        document.forms['category_create']['thumbnail'].value = result.info.thumbnail_url;
                     }
                 }
             )

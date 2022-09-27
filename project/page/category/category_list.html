@@ -390,12 +390,12 @@
                 var myWidget = cloudinary.createUploadWidget({
                         cloudName: 'huytqth2008010',
                         uploadPreset: 'clkppahe'}, (error, result) => {
-                        if (!error && result && result.event === "success") {
-                            console.log('Done! Here is the image info: ', result.info.url);
+                    if (!error && result && result.event === "success") {
+                            console.log('Done! Here is the image info: ', result.info.secure_url);
                             var img = document.getElementById("obj_thumbnail");
                             img.classList.remove("hide");
-                            img.src = result.info.url;
-                            document.forms['edit_obj']['obj_thumbnail'].value = result.info.url;
+                            img.src = result.info.secure_url;
+                            document.forms['edit_obj']['obj_thumbnail'].value = result.info.secure_url;
                         }
                     }
                 )
