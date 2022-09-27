@@ -275,7 +275,7 @@
                                     <thead>
                                         <tr>
                                             <th style="text-align: center">Id</th>
-                                            <th style="text-align: center">Note</th>
+<!--                                            <th style="text-align: center">Note</th>-->
                                             <th style="text-align: center">Thumbnail</th>
                                             <th style="text-align: center">Action</th>
                                         </tr>
@@ -297,7 +297,7 @@
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
-                            <div class="modal-body">
+                            <div class="modal-body" hidden>
                                 <div class="form-group">
                                     <label class="form-label">Note</label>
                                     <input class="lh-base form-control obj_name" name="obj_note" type="text" placeholder="Enter note..."/>
@@ -359,7 +359,6 @@
                           for (var i = 0; i < jsonObject.length; i++){
                               content += `<tr>`+
                                   `<td id="obj_id_${jsonObject[i].id}">${jsonObject[i].id}</td>`+
-                                  `<td id="obj_note_${jsonObject[i].id}">${jsonObject[i].note}</td>`+
                                   `<td id="obj_thumbnail_${jsonObject[i].id}" style="text-align: center"><img id="thumbnail_${jsonObject[i].id}" src="${jsonObject[i].thumbnail}" alt="" width="150px"></td>`+
                                   `<td  style="text-align: center;width: 120px"><button type="button" class="btn obj_edit" data-id="${jsonObject[i].id}" data-toggle="modal" data-target="#obj_edit"><i data-feather="edit"></i></button>`+
                                   `<button type="button" class="btn obj_delete" data-id="${jsonObject[i].id}"><i data-feather="trash-2"></i></button></td>`+
@@ -384,7 +383,7 @@
               var id_obj = this.getAttribute('data-id');
               var img = document.getElementById("thumbnail_" + id_obj);
                 //Set value Cate to edit
-              $('input[name="obj_note"]').val(document.getElementById('obj_note_' + id_obj).innerHTML);
+              // $('input[name="obj_note"]').val(document.getElementById('obj_note_' + id_obj).innerHTML);
               $('input[name="obj_thumbnail"]').val(img.src);
               $('#obj_thumbnail').attr('src', img.src);
                 var myWidget = cloudinary.createUploadWidget({
@@ -404,10 +403,10 @@
                     myWidget.classList.remove("hide");
                 }, false);
               $('.update_obj').on('click', function () {
-                var obj_note = $('input[name="obj_note"]').val();
+                // var obj_note = $('input[name="obj_note"]').val();
                 var obj_thumbnail = $('input[name="obj_thumbnail"]').val();
                 var obj = {
-                  "note": obj_note,
+                  // "note": obj_note,
                   "thumbnail": obj_thumbnail,
                 };
                 var token = localStorage.getItem('token');
